@@ -1,12 +1,16 @@
+import store from './src/stores/store';
+import { Provider } from 'react-redux';
+
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
+import { MuscleList } from './src/components/muscles/MuscleList';
+
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Provider store={store}>
+      <MuscleList />
+    </Provider>
   );
 }
 
